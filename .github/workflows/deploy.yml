@@ -24,7 +24,7 @@ jobs:
       - name: Update Repo (Auto Pull)
         run: |
           databricks repos update \
-          --path "/Repos/uprishi450@gmail.com/Databricks_POC_Rishi" \
+          --path "/Workspace/Repos/uprishi450@gmail.com/Databricks_POC_Rishi" \
           --branch main
 
       - name: Trigger Job

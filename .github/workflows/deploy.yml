@@ -22,10 +22,10 @@ jobs:
           echo "DATABRICKS_TOKEN=${{ secrets.DATABRICKS_TOKEN }}" >> $GITHUB_ENV
 
       - name: Update Repo (Auto Pull)
-        run: |
-          databricks repos update \
-          --path "/Repos/uprishi450@gmail.com/Databricks_POC_Rishi" \
-          --branch main
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+        run: databricks repos update --path "/Repos/uprishi450@gmail.com/Databricks_POC_Rishi" --branch main
 
       - name: Trigger Job
         run: |
